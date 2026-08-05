@@ -4,7 +4,7 @@ Live controller overlay for streaming. The agent reads your gamepad in the backg
 fullscreen game has focus, and serves a browser page that draws the pad as you press it. Point an OBS
 browser source at that page and your inputs are on stream.
 
-![The overlay showing a DualSense with the face buttons and left stick active](docs/images/hero-overlay.png)
+![The overlay showing a DualSense](docs/images/obs-dualsense.webp)
 
 Windows 10 and 11, x64.
 
@@ -26,7 +26,7 @@ Everything is on the [latest release](../../releases/latest).
 Download `JackdawInputs.appinstaller` and open it. Windows shows you who published it before anything
 runs, and installs the app once you confirm.
 
-![The App Installer window naming The Omen Den L.L.C. as the publisher](docs/images/install-appinstaller.png)
+![The App Installer window naming The Omen Den L.L.C. as the publisher](docs/images/install-appinstaller.webp)
 
 This route registers an update channel. On later launches Windows checks whether a newer version has
 been published and fetches it in the background, and Jackdaw Inputs tells you when one is waiting.
@@ -75,7 +75,7 @@ Get-FileHash -Algorithm SHA256 .\JackdawInputs-x64.msix
 Start Jackdaw Inputs. It opens a terminal window and prints three things: the address of the overlay
 page, the connection key, and where it is writing logs.
 
-![The agent console after startup, showing the overlay URL and the connection key](docs/images/first-run-console.png)
+![The agent console after startup, showing the overlay URL and the connection key](docs/images/first-run-console.webp)
 
 Leave that window open. Closing it stops the agent.
 
@@ -83,7 +83,7 @@ Open the overlay address in a browser. You land on the harness page, which shows
 agent can currently see and updates as you press buttons. If your pad shows up here, the capture side
 is working and everything that follows is about getting the picture into OBS.
 
-![The harness page showing a connected controller responding to input](docs/images/harness-page.png)
+![The harness page showing a connected controller responding to input](docs/images/harness-page.webp)
 
 The connection key is stored in Windows Credential Manager and stays the same between runs, so the
 URL you set up in OBS today still works tomorrow. Run the agent with `--new-key` if you ever want to
@@ -94,18 +94,18 @@ change it, which also means updating the URL in OBS.
 Go to the Overlay setup page in the sidebar. Paste in the key from the console, choose whether you
 want an outline and how the pad should scale, and the page builds the URL for you.
 
-![The Overlay setup page with a key entered and the browser source URL built](docs/images/overlay-setup.png)
+![The Overlay setup page with a key entered and the browser source URL built](docs/images/overlay-setup.webp)
 
 Copy that URL. In OBS, add a Browser source and paste it into the URL field. Set the width and height
 to suit the pad you use, and tick "Shutdown source when not visible" if you want the agent to stop
 sending frames while the source is hidden.
 
-![The OBS browser source properties dialog with the overlay URL pasted in](docs/images/obs-browser-source.png)
+![The OBS browser source properties dialog with the overlay URL pasted in](docs/images/obs-browser-source.webp)
 
 The overlay draws on a transparent background, so it composites straight over game footage with no
 chroma key.
 
-![The overlay composited over gameplay in the OBS preview](docs/images/obs-composited.png)
+![The overlay composited over gameplay in the OBS preview](docs/images/obs-composited.webp)
 
 ## Two-PC setups
 
